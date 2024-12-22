@@ -4,8 +4,14 @@
   <meta charset="UTF-8">
   <title>Byte Calculator</title>
   <style>
+    @font-face {
+      font-family: 'Pretendard-Regular';
+      src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
     body {
-      font-family: "맑은고딕", "Malgun Gothic";
+      font-family: 'Pretendard-Regular';
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -19,7 +25,8 @@
       box-sizing: border-box;
       overflow-y: auto;
       resize: none;
-      font-size: 15px;
+      font-size: 17px;
+      font-family: 'Pretendard-Regular';
     }
     #result {
       margin-top: 20px;
@@ -29,7 +36,7 @@
   </style>
 </head>
 <body>
-  <textarea id="inputBox" placeholder="한글 3바이트, 영어, 숫자, 특수문자, 공백 1바이트, 줄바꿈 2바이트"></textarea>
+  <textarea id="inputBox" spellcheck="false" placeholder="한글 3바이트, 영어, 숫자, 특수문자, 공백 1바이트, 줄바꿈 2바이트"></textarea>
   <div id="result">Bytes: 0</div>
 
   <script>
