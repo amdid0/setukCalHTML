@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <title>Byte Calculator</title>
   <style>
     body {
-      font-family: "맑은고딕", "Malgun Gotgic";
+      font-family: "맑은고딕", "Malgun Gothic";
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -35,16 +35,26 @@
   <script>
     const inputBox = document.getElementById('inputBox');
     const result = document.getElementById('result');
+    //const hangeul = []
 
     inputBox.addEventListener('input', () => {
       const text = inputBox.value;
-      const numFullStr = text.length; // Total characters
-      const space = (text.match(/ /g) || []).length; // Number of spaces
-      const enter = (text.match(/\n/g) || []).length; // Number of newlines
-      const period = (text.match(/\./g) || []).length; // Number of periods
 
-      // Calculate bytes
-      const totalBytes = (numFullStr - space - enter - period) * 3 + space + period + enter * 2;
+      let totalBytes = 0;
+      for (let char of text) {
+        if (char === '\n') {
+          totalBytes += 2; // 줄바꿈은 2바이트
+        } else if (char.match(/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/)) {
+          totalBytes += 3; // 한글은 3바이트
+        } else if (char.match(/[a-zA-Z0-9!-/:-@[-`{-~]/)) {
+          totalBytes += 1; // 영어, 숫자, 특수문자는 1바이트
+        } else if (char === ' ') {
+          totalBytes += 1; // 공백은 1바이트
+        } else {
+          totalBytes += 1; // 모르는 사람은 기본적으로 1바이트 처리
+        }
+      }
+
       result.textContent = `Bytes: ${totalBytes}`;
     });
   </script>
