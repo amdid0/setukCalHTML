@@ -1,0 +1,29 @@
+ @font-face {
+      font-family: 'Pretendard-Regular';
+      src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    body {
+      font-family: 'Pretendard-Regular';
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+    }
+    #inputBox {
+      width: 800px;
+      height: 600px;
+      border: 1px solid black;
+      padding: 10px;
+      box-sizing: border-box;
+      overflow-y: auto;
+      resize: none;
+      font-size: 17px;
+      font-family: 'Pretendard-Regular';
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
