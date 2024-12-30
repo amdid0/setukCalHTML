@@ -7,8 +7,11 @@
 </head>
 <body id="main">
   <textarea id="inputBox" spellcheck="false" placeholder="한글 3바이트, 영어, 숫자, 특수문자, 공백 1바이트, 줄바꿈 2바이트"></textarea>
-  <div id="result">Bytes: 0</div>
-
+  <div style = "display: flex;">
+    <p>&nbsp;</p>
+    <div style = "margin-right: 20px; margin-top: 25px;" id="result">Bytes: 0</div>
+    <button id = "save">txt 파일로 저장</button>
+  </div>
   <script src="./main.js"></script>
 </body>
 </html>

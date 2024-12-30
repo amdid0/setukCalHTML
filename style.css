@@ -24,6 +24,16 @@
     }
     #result {
       margin-top: 20px;
-      font-size: 18px;
+      font-size: 18px;;
       font-weight: bold;
+    }
+    #save {
+      background-color: white;
+      margin-top: 20px;
+      font-size: 18px;;
+      font-weight: bold;
+      border-color: gray;
+    }
+    #save:hover {
+      background-color: rgb(206, 206, 206);
     }
